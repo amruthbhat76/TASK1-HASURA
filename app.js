@@ -31,7 +31,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/htmlform',function(req,res){
-  res.sendFile("/HASURA/myapp/View/htmlform.html");
+   res.sendFile('View/htmlform.html',{root:__dirname});
 });
 
 app.get('/authors',function(req,res){
@@ -58,7 +58,7 @@ app.post('/login',function(req,res){
 });
 
 app.get('/html',function(req,res){
-	res.sendFile('/HASURA/myapp/View/myhtml.html');
+	res.sendFile('View/myhtml.html',{root:__dirname});
 })
 app.get('/robots.txt',function(req, res){
  res.send('ACCESSS DENIED!!');
